@@ -7,15 +7,17 @@ module.exports = {
   ],
   theme: {
     colors: {
+      "bg-col": { "bg-dark": "#202020", "bg-light": "#333333" },
       "title-col": "#E6E6E6",
       "font-col": "#CCCCCC",
-      "brand-one": { 50: "#FFC164", 100: "#AB7E33" },
+      "brand-one": { 50: "#FFC164", 100: "#AB7E33", 150: "#3E2E15" },
       "brand-two": "#CB6E00",
       "brand-tree": "#68402A",
       "brand-four": "#4B8372",
       "brand-five": {
         50: "#4FFF96",
         100: "#2A8D52",
+        150: "#223D34",
       },
       "grey-scale": {
         "grey-one": "#FFFFFF",
@@ -34,8 +36,6 @@ module.exports = {
     extend: {
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
     },
   },
