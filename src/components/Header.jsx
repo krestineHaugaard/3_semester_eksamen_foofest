@@ -17,14 +17,14 @@ export default function Header() {
         />
       </Link>
       <Link
-        href="/program-overview"
+        href="/program"
         prefetch={false}
         className="text-title-col hover:text-brand-two active:text-brand-five-100 underline underline-offset-8 decoration-2"
       >
         Festival program
       </Link>
       <Link
-        href="/band-overview"
+        href="/bands"
         prefetch={false}
         className="text-title-col hover:text-brand-two active:text-brand-five-100 underline underline-offset-8 decoration-2"
       >
