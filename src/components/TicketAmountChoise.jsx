@@ -20,9 +20,9 @@ export default function TicketAmountChoise() {
 
   return (
     <div>
+      <button onClick={decrement}> - </button>
       <input type="number" value={number} onChange={handleChange} />
-      <button onClick={increment}>Increase</button>
-      <button onClick={decrement}>Decrease</button>
+      <button onClick={increment}> + </button>
     </div>
   );
 }

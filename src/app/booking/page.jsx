@@ -1,11 +1,14 @@
 import { getAvailableSpots } from "@/utils/api";
 import TicketAmountChoise from "@/components/TicketAmountChoise";
+import React from "react";
 
 export default async function Booking() {
+  "use client";
+
   const data = await getAvailableSpots();
-  console.log(data);
+
   return (
-    <>
+    <section>
       {data.map((spot) => {
         return (
           <article key={spot.area}>
@@ -15,6 +18,6 @@ export default async function Booking() {
         );
       })}
       <TicketAmountChoise />
-    </>
+    </section>
   );
 }
