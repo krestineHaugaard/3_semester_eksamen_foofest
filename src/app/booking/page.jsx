@@ -1,4 +1,6 @@
 import CampingAreas from "@/components/CampingAreas";
+import { orderRes } from "@/utils/orderdetailsapi";
+import { redirect } from "next/navigation";
 
 import React from "react";
 
@@ -24,8 +26,18 @@ export default function Booking() {
     );
 
     const orderReserved = await response.json();
-    const id = orderReserved.id;
+
+    const data = await orderRes(
+      formData.get("campingarea"),
+      formData.get("ticket"),
+      orderReserved.id
+    );
+
+    console.log(data);
+
+    // redirect("/booking_for/" + );
   }
+
   return (
     <>
       <section>
