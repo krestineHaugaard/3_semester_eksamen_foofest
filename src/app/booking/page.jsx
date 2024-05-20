@@ -1,7 +1,5 @@
 import CampingAreas from "@/components/CampingAreas";
 
-import { redirect } from "next/dist/server/api-utils";
-
 import React from "react";
 
 export default function Booking() {
@@ -25,7 +23,8 @@ export default function Booking() {
       }
     );
 
-    const data = await response.json();
+    const orderReserved = await response.json();
+    const id = orderReserved.id;
   }
   return (
     <>
