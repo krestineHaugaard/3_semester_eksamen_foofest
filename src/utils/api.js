@@ -1,5 +1,5 @@
-// const apiUrl = "http://localhost:8080/";
-const apiUrl = "https://respected-berry-scaffold.glitch.me/";
+const apiUrl = "http://localhost:8080/";
+// const apiUrl = "https://respected-berry-scaffold.glitch.me/";
 
 // Get data from api
 export async function getData(param) {
@@ -16,15 +16,15 @@ export async function getAvailableSpots() {
 }
 
 // Reserve spot
-export async function reserveSpot() {
+export async function reserveSpot(area, amount) {
   const headersList = {
     "Content-Type": "application/json",
   };
 
   const bodyContent = JSON.stringify({
     // has to be changed
-    area: "Alfheim",
-    amount: 2,
+    area: { area },
+    amount: { amount },
   });
 
   const response = await fetch(apiUrl + "reserve-spot", {
