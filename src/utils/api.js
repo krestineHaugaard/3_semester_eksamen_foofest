@@ -1,5 +1,5 @@
-const apiUrl = "http://localhost:8080/";
-// const apiUrl = "https://respected-berry-scaffold.glitch.me/";
+// const apiUrl = "http://localhost:8080/";
+const apiUrl = "https://respected-berry-scaffold.glitch.me/";
 
 // Get data from api
 export async function getData(param) {
