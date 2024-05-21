@@ -1,9 +1,24 @@
 import { getOrder } from "@/utils/orderdetailsapi";
+import TicketInformationForm from "@/components/TicketInformationForm";
 
-export default function BookingInformation({ params }) {
+export const dynamic = "force-dynamic";
+
+export default async function BookingInformation({ params }) {
+  const orderid = params.id;
+  const data = await getOrder(orderid);
+
+  const forms = data.map((order) => {
+    return order.amount;
+  });
+  const cleanNumber = forms[0];
+
   return (
     <section>
-      <p>does it work {params.id}</p>
+      {Array(cleanNumber)
+        .fill(true)
+        .map((index) => (
+          <TicketInformationForm key={index} />
+        ))}
     </section>
   );
 }

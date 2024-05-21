@@ -1,28 +1,33 @@
-export default function TicketInformationForm() {
+export default function TicketInformationForm(params) {
   return (
-    <form action="">
+    <form key={params.index} action="">
       <div>
-        <label htmlFor="">Regular</label>
-        <input type="radio" />
-        <label htmlFor="">VIP</label>
-        <input type="radio" />
+        <label htmlFor="ticket_reguler">Regular</label>
+        <input
+          id="ticket_reguler"
+          type="radio"
+          value="reguler"
+          name="ticket_choice"
+        />
+        <label htmlFor="ticket_vip">VIP</label>
+        <input id="ticket_vip" type="radio" value="vip" name="ticket_choice" />
       </div>
-      <label htmlFor="">First name</label>
-      <input type="text" />
-      <label htmlFor="">Last name</label>
-      <input type="text" />
-      <label htmlFor="">E-mail</label>
-      <input type="e-mail" />
-      <label htmlFor="">Phone number</label>
-      <input type="text" />
-      <label htmlFor="">Date of birth</label>
-      <input type="date" />
-      <label htmlFor="">Address</label>
-      <input type="text" />
-      <label htmlFor="">Postal code</label>
-      <input type="text" />
-      <label htmlFor="">City</label>
-      <input type="text" />
+      <label htmlFor="first_name">First name</label>
+      <input id="first_name" type="text" />
+      <label htmlFor="last_name">Last name</label>
+      <input id="last_name" type="text" />
+      <label htmlFor="email">E-mail</label>
+      <input id="email" type="e-mail" />
+      <label htmlFor="phone_number">Phone number</label>
+      <input id="phone_number" type="text" />
+      <label htmlFor="date_of_birth">Date of birth</label>
+      <input id="date_of_birth" type="date" />
+      <label htmlFor="address">Address</label>
+      <input id="address" type="text" />
+      <label htmlFor="postal_code">Postal code</label>
+      <input id="postal_code" type="text" />
+      <label htmlFor="city">City</label>
+      <input id="city" type="text" />
     </form>
   );
 }
