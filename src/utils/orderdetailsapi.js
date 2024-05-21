@@ -22,7 +22,6 @@ export async function orderRes(area, amount, resevationid) {
     }
   );
 
-  const data = await response.json();
-
-  console.log(data);
+  const data = response.json();
+  return data;
 }

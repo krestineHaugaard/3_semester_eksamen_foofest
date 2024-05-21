@@ -4,40 +4,42 @@ import { redirect } from "next/navigation";
 
 import React from "react";
 
+async function submit(formData) {
+  "use server";
+  const headersList = {
+    "Content-Type": "application/json",
+  };
+
+  const bodyContent = JSON.stringify({
+    area: formData.get("campingarea"),
+    amount: formData.get("ticket"),
+  });
+
+  const response = await fetch(
+    process.env.NEXT_PUBLIC_API_URL + "reserve-spot",
+    {
+      method: "PUT",
+      body: bodyContent,
+      headers: headersList,
+    }
+  );
+
+  const orderReserved = await response.json();
+
+  const id = orderReserved.id;
+
+  console.log(id);
+
+  orderRes(
+    formData.get("campingarea"),
+    formData.get("ticket"),
+    orderReserved.id
+  );
+
+  redirect("/booking_for/" + id);
+}
+
 export default function Booking() {
-  async function submit(formData) {
-    "use server";
-    const headersList = {
-      "Content-Type": "application/json",
-    };
-
-    const bodyContent = JSON.stringify({
-      area: formData.get("campingarea"),
-      amount: formData.get("ticket"),
-    });
-
-    const response = await fetch(
-      process.env.NEXT_PUBLIC_API_URL + "reserve-spot",
-      {
-        method: "PUT",
-        body: bodyContent,
-        headers: headersList,
-      }
-    );
-
-    const orderReserved = await response.json();
-
-    const data = await orderRes(
-      formData.get("campingarea"),
-      formData.get("ticket"),
-      orderReserved.id
-    );
-
-    console.log(data);
-
-    // redirect("/booking_for/" + );
-  }
-
   return (
     <>
       <section>
