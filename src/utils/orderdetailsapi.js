@@ -43,18 +43,7 @@ export async function getOrder(param) {
   return response.json();
 }
 
-export async function postTicketHolderInfo(
-  first_name,
-  last_name,
-  email,
-  tlf_number,
-  birthday,
-  address_line,
-  postal_code,
-  city,
-  ticket_chosen,
-  order_id
-) {
+export async function postTicketHolderInfo(formarray) {
   const headersList = {
     "Content-Type": "application/json",
     apikey:
@@ -63,16 +52,7 @@ export async function postTicketHolderInfo(
   };
 
   const bodyContent = JSON.stringify({
-    first_name: first_name,
-    last_name: last_name,
-    email: email,
-    tlf_number: tlf_number,
-    birthday: birthday,
-    address_line: address_line,
-    postal_code: postal_code,
-    city: city,
-    ticket_chosen: ticket_chosen,
-    order_id: order_id,
+    ticket_holders: formarray,
   });
 
   const response = await fetch(
@@ -84,7 +64,5 @@ export async function postTicketHolderInfo(
     }
   );
 
-  const data = [response.json()];
-
-  console.log(data);
+  const data = response.json();
 }
