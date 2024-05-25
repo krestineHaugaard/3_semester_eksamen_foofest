@@ -10,7 +10,6 @@ export async function orderRes(area, amount, resevationid) {
     area: area,
     amount: amount,
     resevationid: resevationid,
-    orderconfirmed: false,
   });
 
   let response = await fetch(
@@ -43,7 +42,7 @@ export async function getOrder(param) {
   return response.json();
 }
 
-export async function postTicketHolderInfo(formarray) {
+export async function postTicketHolderInfo(form) {
   const headersList = {
     "Content-Type": "application/json",
     apikey:
@@ -51,9 +50,22 @@ export async function postTicketHolderInfo(formarray) {
     Prefer: "return=representation",
   };
 
-  const bodyContent = JSON.stringify({
-    ticket_holders: formarray,
-  });
+  const bodyContent = JSON.stringify(
+    form.forEach((singleform) => {
+      return {
+        first_name: form.first_name,
+        last_name: form.last_name,
+        email: form.email,
+        tlf_number: form.tlf_number,
+        birthday: form.birthday,
+        address_line: form.address_line,
+        postal_code: form.postal_code,
+        city: form.city,
+        chose_vip: form.chose_vip,
+        order_id: form.orderid,
+      };
+    })
+  );
 
   const response = await fetch(
     "https://yuisogjwvntfoxudooln.supabase.co/rest/v1/ticket_holder_information",
