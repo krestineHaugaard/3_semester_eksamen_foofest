@@ -42,32 +42,39 @@ export async function getOrder(param) {
   return response.json();
 }
 
-export async function postTicketHolderInfo(form) {
-  const headersList = {
-    "Content-Type": "application/json",
+export async function postTicketHolderInfo(
+  ticket,
+  firstname,
+  lastname,
+  email,
+  phone,
+  birthday,
+  address,
+  postal,
+  city,
+  orderid
+) {
+  let headersList = {
     apikey:
       "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inl1aXNvZ2p3dm50Zm94dWRvb2xuIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTA3NTE5NDUsImV4cCI6MjAyNjMyNzk0NX0.A4lJrT15zWBvm6Zm7nXbtq01CUOrjNct49-JgtQboeg",
     Prefer: "return=representation",
+    "Content-Type": "application/json",
   };
 
-  const bodyContent = JSON.stringify(
-    form.forEach((singleform) => {
-      return {
-        first_name: form.first_name,
-        last_name: form.last_name,
-        email: form.email,
-        tlf_number: form.tlf_number,
-        birthday: form.birthday,
-        address_line: form.address_line,
-        postal_code: form.postal_code,
-        city: form.city,
-        chose_vip: form.chose_vip,
-        order_id: form.orderid,
-      };
-    })
-  );
+  let bodyContent = JSON.stringify({
+    chose_ticket: ticket,
+    first_name: firstname,
+    last_name: lastname,
+    email: email,
+    phone_number: phone,
+    birthday: birthday,
+    address_line: address,
+    postal_code: postal,
+    city: city,
+    order_id: orderid,
+  });
 
-  const response = await fetch(
+  let response = await fetch(
     "https://yuisogjwvntfoxudooln.supabase.co/rest/v1/ticket_holder_information",
     {
       method: "POST",
@@ -76,5 +83,5 @@ export async function postTicketHolderInfo(form) {
     }
   );
 
-  const data = response.json();
+  response.json();
 }

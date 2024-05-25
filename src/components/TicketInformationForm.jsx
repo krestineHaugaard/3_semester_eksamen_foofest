@@ -1,20 +1,22 @@
+import { postTicketHolderInfo } from "@/utils/orderdetailsapi";
+
 export default function TicketInformationForm(props) {
   console.log(props.index);
-  async function submit(e) {
+  async function submit(formdata) {
     "use server";
 
-    const orderid = props.orderID;
-
-    const formdata = e;
-
-    const newFormData = {
-      first_name: formdata.get("first_name"),
-      last_name: formdata.get("last_name"),
-      email: formdata.get("email"),
-      order_id: orderid,
-    };
-
-    console.log(newFormData);
+    postTicketHolderInfo(
+      formdata.get("ticket_choice"),
+      formdata.get("first_name"),
+      formdata.get("last_name"),
+      formdata.get("email"),
+      formdata.get("phone_number"),
+      formdata.get("birthday"),
+      formdata.get("address"),
+      formdata.get("postal_code"),
+      formdata.get("city"),
+      props.orderID
+    );
   }
   return (
     <>
@@ -43,13 +45,13 @@ export default function TicketInformationForm(props) {
         <label htmlFor="email">E-mail</label>
         <input id="email" type="e-mail" name="email" />
         <label htmlFor="phone_number">Phone number</label>
-        <input id="phone_number" type="text" name="phone_number" />
+        <input id="phone_number" type="number" name="phone_number" />
         <label htmlFor="date_of_birth">Date of birth</label>
-        <input id="date_of_birth" type="date" name="birth" />
+        <input id="date_of_birth" type="date" name="birthday" />
         <label htmlFor="address">Address</label>
         <input id="address" type="text" name="address" />
         <label htmlFor="postal_code">Postal code</label>
-        <input id="postal_code" type="text" name="postal_code" />
+        <input id="postal_code" type="number" name="postal_code" />
         <label htmlFor="city">City</label>
         <input id="city" type="text" name="city" />
         <button type="submit">Submit</button>
