@@ -16,7 +16,7 @@ export default async function BookingInformation({ params }) {
 
   return (
     <>
-      <CampingOptions />
+      <CampingOptions orderID={orderid} />
 
       {Array(cleanNumber)
         .fill()
