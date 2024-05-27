@@ -57,8 +57,8 @@ export async function postTicketHolderInfo(
   let headersList = {
     apikey:
       "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inl1aXNvZ2p3dm50Zm94dWRvb2xuIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTA3NTE5NDUsImV4cCI6MjAyNjMyNzk0NX0.A4lJrT15zWBvm6Zm7nXbtq01CUOrjNct49-JgtQboeg",
-    Prefer: "return=representation",
     "Content-Type": "application/json",
+    Prefer: "return=representation",
   };
 
   let bodyContent = JSON.stringify({
@@ -75,7 +75,7 @@ export async function postTicketHolderInfo(
   });
 
   let response = await fetch(
-    "https://yuisogjwvntfoxudooln.supabase.co/rest/v1/ticket_holder_information",
+    "https://yuisogjwvntfoxudooln.supabase.co/rest/v1/ticket_holders",
     {
       method: "POST",
       body: bodyContent,
@@ -83,5 +83,7 @@ export async function postTicketHolderInfo(
     }
   );
 
-  response.json();
+  const data = response.json();
+
+  return data;
 }
