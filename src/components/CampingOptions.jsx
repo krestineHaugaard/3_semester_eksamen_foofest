@@ -1,6 +1,6 @@
 "use client";
 
-import { updateOrder } from "@/app/utils/orderdetailsapi";
+import { updateOrder } from "@/utils/orderdetailsapi";
 import { useState } from "react";
 
 export default function CampingOptions(props) {

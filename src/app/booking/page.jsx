@@ -1,5 +1,5 @@
 import CampingAreas from "@/components/CampingAreas";
-import { orderRes } from "@/app/utils/orderdetailsapi";
+import { orderRes } from "@/utils/orderdetailsapi";
 import { redirect } from "next/navigation";
 
 import React from "react";

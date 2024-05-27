@@ -1,4 +1,4 @@
-import { getOrder } from "@/app/utils/orderdetailsapi";
+import { getOrder } from "@/utils/orderdetailsapi";
 import TicketInformationForm from "@/components/TicketInformationForm";
 import CampingOptions from "@/components/CampingOptions";
 
