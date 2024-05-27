@@ -1,4 +1,4 @@
-import { getData } from "@/utils/api";
+import { getData } from "@/app/utils/api";
 
 export default async function BandList() {
   const bands = await getData("bands");

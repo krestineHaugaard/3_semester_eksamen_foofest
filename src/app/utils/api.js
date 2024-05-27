@@ -5,7 +5,8 @@ const apiUrl = "http://localhost:8080/";
 export async function getData(param) {
   const response = await fetch(apiUrl + param);
 
-  return response.json();
+  const data = await response.json();
+  return data;
 }
 
 // Get spots availability

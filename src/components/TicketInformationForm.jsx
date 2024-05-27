@@ -1,4 +1,4 @@
-import { postTicketHolderInfo } from "@/utils/orderdetailsapi";
+import { postTicketHolderInfo } from "@/app/utils/orderdetailsapi";
 
 export default function TicketInformationForm(props) {
   console.log(props.index);

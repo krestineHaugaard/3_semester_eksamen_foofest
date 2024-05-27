@@ -1,4 +1,4 @@
-import { getAvailableSpots } from "@/utils/api";
+import { getAvailableSpots } from "@/app/utils/api";
 
 export default async function CampingAreas() {
   const data = await getAvailableSpots();
