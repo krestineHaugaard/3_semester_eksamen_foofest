@@ -2,8 +2,6 @@ import { getOrder } from "@/utils/orderdetailsapi";
 import TicketInformationForm from "@/components/TicketInformationForm";
 import CampingOptions from "@/components/CampingOptions";
 
-export const dynamic = "force-dynamic";
-
 export default async function BookingInformation({ params }) {
   const orderid = params.id;
   const data = await getOrder(orderid);
