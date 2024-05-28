@@ -8,7 +8,6 @@ export default function Footer() {
         width={500}
         height={500}
         alt="Pagan folk festival logo"
-        sizes="(max-width: 500px) 100vw, 33vw"
         className="mx-auto md:-mb-48"
       />
       <div className="flex justify-between items-center flex-nowrap my-4 md:my-14">
@@ -22,10 +21,25 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="flex">
-          <p className="text-nowrap md:text-xl text-center">
-            social media goes here
-          </p>
+        <div className="flex gap-6">
+          <Image
+            src="/images/facebook_icon.svg"
+            width={40}
+            height={40}
+            alt="facebook icon"
+          />
+          <Image
+            src="/images/insta_icon.svg"
+            width={40}
+            height={40}
+            alt="insta icon"
+          />
+          <Image
+            src="/images/twitter_icon.svg"
+            width={40}
+            height={40}
+            alt="twitter icon"
+          />
         </div>
       </div>
     </footer>
