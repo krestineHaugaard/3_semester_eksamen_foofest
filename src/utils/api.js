@@ -9,6 +9,14 @@ export async function getData(param) {
   return data;
 }
 
+// Get data from api
+export async function getBands(param) {
+  const response = await fetch(apiUrl + "bands/" + param);
+
+  const data = await response.json();
+  return data;
+}
+
 // Get spots availability
 export async function getAvailableSpots() {
   const response = await fetch(apiUrl + "available-spots");

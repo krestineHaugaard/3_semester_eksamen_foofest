@@ -39,18 +39,15 @@ export default function ProgramInformation(props) {
 
   return (
     <>
-      <h1>Festival program</h1>
-      <p>
-        Here is an overview of all the bands, what day they are playing, on what
-        stage and at what time
-      </p>
-      <p>Click around and keep yourself updatet</p>
-      <div className="flex justify-center gap-4">
+      <h1 className="text-center text-3xl md:text-5xl pt-12 pb-14 md:pt-16 md:pb-28">
+        Festival program
+      </h1>
+      <div className="flex justify-center gap-4 flex-wrap">
         <button
           className={
             activeBtn === 1
-              ? "rounded-t-lg border-4 border-brand-tree bg-brand-tree py-2 px-6 text-title-col hover:bg-grey-scale-grey-nine mb-[-4px]"
-              : "rounded-t-lg border-4 border-brand-tree py-2 px-6 text-title-col hover:bg-brand-tree mb-[-4px]"
+              ? "rounded-lg border-4 border-brand-tree bg-brand-tree py-1 md:py-2 px-3 md:px-6 text-title-col md:hover:bg-grey-scale-grey-nine mb-[-4px] text-xs md:text-base shadow-[3px_3px_0_1px_rgba(70,52,41,1)]"
+              : "rounded-lg border-4 border-brand-tree py-1 md:py-2 px-3 md:px-6 text-title-col md:hover:bg-brand-tree mb-[-4px] text-xs md:text-base shadow-[3px_3px_0_1px_rgba(70,52,41,1)]"
           }
           onClick={() => {
             setChosenDay("mon");
@@ -62,8 +59,8 @@ export default function ProgramInformation(props) {
         <button
           className={
             activeBtn === 2
-              ? "rounded-t-lg border-4 border-brand-tree bg-brand-tree py-2 px-6 text-title-col hover:bg-grey-scale-grey-nine mb-[-4px]"
-              : "rounded-t-lg border-4 border-brand-tree py-2 px-6 text-title-col hover:bg-brand-tree mb-[-4px]"
+              ? "rounded-lg border-4 border-brand-tree bg-brand-tree py-1 md:py-2 px-3 md:px-6 text-title-col md:hover:bg-grey-scale-grey-nine mb-[-4px] text-xs md:text-base shadow-[3px_3px_0_1px_rgba(70,52,41,1)]"
+              : "rounded-lg border-4 border-brand-tree py-1 md:py-2 px-3 md:px-6 text-title-col md:hover:bg-brand-tree mb-[-4px] text-xs md:text-base shadow-[3px_3px_0_1px_rgba(70,52,41,1)]"
           }
           onClick={() => {
             setChosenDay("tue");
@@ -75,8 +72,8 @@ export default function ProgramInformation(props) {
         <button
           className={
             activeBtn === 3
-              ? "rounded-t-lg border-4 border-brand-tree bg-brand-tree py-2 px-6 text-title-col hover:bg-grey-scale-grey-nine mb-[-4px]"
-              : "rounded-t-lg border-4 border-brand-tree py-2 px-6 text-title-col hover:bg-brand-tree mb-[-4px]"
+              ? "rounded-lg border-4 border-brand-tree bg-brand-tree py-1 md:py-2 px-3 md:px-6 text-title-col md:hover:bg-grey-scale-grey-nine mb-[-4px] text-xs md:text-base shadow-[3px_3px_0_1px_rgba(70,52,41,1)]"
+              : "rounded-lg border-4 border-brand-tree py-1 md:py-2 px-3 md:px-6 text-title-col md:hover:bg-brand-tree mb-[-4px] text-xs md:text-base shadow-[3px_3px_0_1px_rgba(70,52,41,1)]"
           }
           onClick={() => {
             setChosenDay("wed");
@@ -88,8 +85,8 @@ export default function ProgramInformation(props) {
         <button
           className={
             activeBtn === 4
-              ? "rounded-t-lg border-4 border-brand-tree bg-brand-tree py-2 px-6 text-title-col hover:bg-grey-scale-grey-nine mb-[-4px]"
-              : "rounded-t-lg border-4 border-brand-tree py-2 px-6 text-title-col hover:bg-brand-tree mb-[-4px]"
+              ? "rounded-lg border-4 border-brand-tree bg-brand-tree py-1 md:py-2 px-3 md:px-6 text-title-col md:hover:bg-grey-scale-grey-nine mb-[-4px] text-xs md:text-base shadow-[3px_3px_0_1px_rgba(70,52,41,1)]"
+              : "rounded-lg border-4 border-brand-tree py-1 md:py-2 px-3 md:px-6 text-title-col md:hover:bg-brand-tree mb-[-4px] text-xs md:text-base shadow-[3px_3px_0_1px_rgba(70,52,41,1)]"
           }
           onClick={() => {
             setChosenDay("thu");
@@ -101,8 +98,8 @@ export default function ProgramInformation(props) {
         <button
           className={
             activeBtn === 5
-              ? "rounded-t-lg border-4 border-brand-tree bg-brand-tree py-2 px-6 text-title-col hover:bg-grey-scale-grey-nine mb-[-4px]"
-              : "rounded-t-lg border-4 border-brand-tree py-2 px-6 text-title-col hover:bg-brand-tree mb-[-4px]"
+              ? "rounded-lg border-4 border-brand-tree bg-brand-tree py-1 md:py-2 px-3 md:px-6 text-title-col md:hover:bg-grey-scale-grey-nine mb-[-4px] text-xs md:text-base shadow-[3px_3px_0_1px_rgba(70,52,41,1)]"
+              : "rounded-lg border-4 border-brand-tree py-1 md:py-2 px-3 md:px-6 text-title-col md:hover:bg-brand-tree mb-[-4px] text-xs md:text-base shadow-[3px_3px_0_1px_rgba(70,52,41,1)]"
           }
           onClick={() => {
             setChosenDay("fri");
@@ -114,8 +111,8 @@ export default function ProgramInformation(props) {
         <button
           className={
             activeBtn === 6
-              ? "rounded-t-lg border-4 border-brand-tree bg-brand-tree py-2 px-6 text-title-col hover:bg-grey-scale-grey-nine mb-[-4px]"
-              : "rounded-t-lg border-4 border-brand-tree py-2 px-6 text-title-col hover:bg-brand-tree mb-[-4px]"
+              ? "rounded-lg border-4 border-brand-tree bg-brand-tree py-1 md:py-2 px-3 md:px-6 text-title-col md:hover:bg-grey-scale-grey-nine mb-[-4px] text-xs md:text-base shadow-[3px_3px_0_1px_rgba(70,52,41,1)]"
+              : "rounded-lg border-4 border-brand-tree py-1 md:py-2 px-3 md:px-6 text-title-col md:hover:bg-brand-tree mb-[-4px] text-xs md:text-base shadow-[3px_3px_0_1px_rgba(70,52,41,1)]"
           }
           onClick={() => {
             setChosenDay("sat");
@@ -127,8 +124,8 @@ export default function ProgramInformation(props) {
         <button
           className={
             activeBtn === 7
-              ? "rounded-t-lg border-4 border-brand-tree bg-brand-tree py-2 px-6 text-title-col hover:bg-grey-scale-grey-nine mb-[-4px]"
-              : "rounded-t-lg border-4 border-brand-tree py-2 px-6 text-title-col hover:bg-brand-tree mb-[-4px]"
+              ? "rounded-lg border-4 border-brand-tree bg-brand-tree py-1 md:py-2 px-3 md:px-6 text-title-col md:hover:bg-grey-scale-grey-nine mb-[-4px] text-xs md:text-base shadow-[3px_3px_0_1px_rgba(70,52,41,1)]"
+              : "rounded-lg border-4 border-brand-tree py-1 md:py-2 px-3 md:px-6 text-title-col md:hover:bg-brand-tree mb-[-4px] text-xs md:text-base shadow-[3px_3px_0_1px_rgba(70,52,41,1)]"
           }
           onClick={() => {
             setChosenDay("sun");
@@ -138,32 +135,49 @@ export default function ProgramInformation(props) {
           Sunday
         </button>
       </div>
-
-      <table className="table-fixed border-b-4 border-t-4 border-brand-tree">
-        <thead>
-          <tr>
-            <th className="sr-only">Time</th>
-            <th className="text-brand-five-100">Midgard</th>
-            <th className="text-brand-five-100">Vanaheim</th>
-            <th className="text-brand-five-100">Jotunheim</th>
-          </tr>
-        </thead>
-        <tbody>
-          {newarray.map((act) => {
-            return (
-              <tr
-                className="text-center align-middle h-24"
-                key={`time${act.act_time}`}
-              >
-                <td className="text-brand-one-100">{act.act_time}</td>
-                <td>{act.act_midgard}</td>
-                <td>{act.act_vanaheim}</td>
-                <td>{act.act_jotunheim}</td>
-              </tr>
-            );
-          })}
-        </tbody>
-      </table>
+      <div className=" pb-10 pt-8">
+        <table className="mx-auto table-fixed">
+          <thead>
+            <tr>
+              <th className="sr-only py-8 md:py-16 text-lg md:text-3xl">
+                Time
+              </th>
+              <th className="text-brand-five-100 py-8 md:py-16 text-lg md:text-3xl">
+                Midgard
+              </th>
+              <th className="text-brand-five-100 py-8 md:py-16 text-lg md:text-3xl">
+                Vanaheim
+              </th>
+              <th className="text-brand-five-100 py-8 md:py-16 text-lg md:text-3xl">
+                Jotunheim
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            {newarray.map((act) => {
+              return (
+                <tr
+                  className="text-center align-middle h-24"
+                  key={`time${act.act_time}`}
+                >
+                  <td className="text-brand-one-100 text-sm md:px-8 md:py-4 md:text-base">
+                    {act.act_time}
+                  </td>
+                  <td className="md:px-8 md:py-4 text-sm md:text-xl">
+                    {act.act_midgard}
+                  </td>
+                  <td className="md:px-8 md:py-4 text-sm md:text-xl">
+                    {act.act_vanaheim}
+                  </td>
+                  <td className="md:px-8 md:py-4 text-sm md:text-xl">
+                    {act.act_jotunheim}
+                  </td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+      </div>
     </>
   );
 }
