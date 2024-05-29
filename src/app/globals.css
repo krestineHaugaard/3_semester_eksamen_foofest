@@ -17,6 +17,10 @@
   h6 {
     color: #e6e6e6;
   }
+
+  input {
+    color: #cccccc;
+  }
 }
 
 @layer utilities {

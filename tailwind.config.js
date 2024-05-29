@@ -19,6 +19,7 @@ module.exports = {
         100: "#2A8D52",
         150: "#223D34",
       },
+      "alert-col": "#F00000",
       "grey-scale": {
         "grey-one": "#FFFFFF",
         "grey-two": "#E6E6E6",

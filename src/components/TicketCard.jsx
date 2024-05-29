@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function TicketCard(props) {
   return (
-    <article className="bg-bg-col-bg-dark rounded-lg p-8 flex flex-col justify-between items-center max-w-80 mx-auto shadow-[3px_3px_0_1px] shadow-brand-four">
+    <article className="bg-bg-col-bg-dark rounded-lg p-12 flex flex-col justify-between items-center shadow-[3px_3px_0_1px] shadow-brand-four">
       <h3 className="sr-only">{props.title}</h3>
       <Image
         src={`/images/${props.image}`}
@@ -11,13 +11,16 @@ export default function TicketCard(props) {
         height={200}
         alt={props.alttag}
       />
-      <p className="text-4xl mt-4">{props.price},-</p>
-      <p className="text-sm mt-1">+ Booking fee 99,-*</p>
-      <p className="text-2xl mt-4">{props.listtitle}</p>
+      <p className="text-3xl md:text-4xl mt-4">{props.price},-</p>
+      <p className="text-xs md:text-sm mt-1">+ Booking fee 99,-*</p>
+      <p className="text-xl md:text-2xl mt-4">{props.listtitle}</p>
       <ul className="list-disc flex flex-col mt-4">
         {props.listitem.map((item) => {
           return (
-            <li key={item} className="text-base text-wrap ml-6 max-w-32">
+            <li
+              key={item}
+              className="text-sm md:text-base text-wrap ml-6 max-w-32"
+            >
               {item}
             </li>
           );
@@ -26,7 +29,7 @@ export default function TicketCard(props) {
       <Link
         href="/booking"
         prefetch={false}
-        className="bg-brand-five-100 text-xl rounded-lg shadow-[3px_3px_0_1px] shadow-brand-five-150 px-8 py-2 mt-3 md:mt-8 text-title-col active:bg-brand-four active:shadow-brand-five-150 hover:bg-brand-two hover:shadow-brand-tree"
+        className="bg-brand-five-100 text-base md:text-xl rounded-lg shadow-[3px_3px_0_1px] shadow-brand-five-150 px-8 py-2 mt-8 text-title-col active:bg-brand-four active:shadow-brand-five-150 hover:bg-brand-two hover:shadow-brand-tree"
       >
         Book now
       </Link>

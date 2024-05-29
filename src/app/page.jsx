@@ -1,5 +1,7 @@
 import CampingCard from "@/components/CampingCard";
+import Newsletter from "@/components/Newsletter";
 import TicketCard from "@/components/TicketCard";
+import DataImportantNews from "@/components/DataImportantNews";
 import Image from "next/image";
 
 export default function Home() {
@@ -12,11 +14,14 @@ export default function Home() {
         height={500}
         alt="Pagan folk festival frontpage image"
       />
+      <div className="max-w-72 md:max-w-3xl  mx-auto py-12 md:py-24">
+        <DataImportantNews />
+      </div>
 
-      <h2 className="text-center text-xl md:text-3xl">
+      <h2 className="text-center text-3xl md:text-5xl pt-12 md:pt-24">
         Tickets and camping overview
       </h2>
-      <div className="grid grid-cols-2">
+      <div className="grid md:grid-cols-2 max-w-72 md:max-w-3xl  mx-auto gap-16 py-12 md:py-24">
         <TicketCard
           title="regular ticket"
           image="regular_ticket.svg"
@@ -33,8 +38,11 @@ export default function Home() {
           listtitle="Regular ticket +"
           listitem={["VIP lounge pass", "VIP only bar", "VIP concert area"]}
         />
+        <CampingCard />
       </div>
-      <CampingCard />
+      <div className="max-w-72 md:max-w-3xl mx-auto py-12 md:py-24">
+        <Newsletter />
+      </div>
     </>
   );
 }

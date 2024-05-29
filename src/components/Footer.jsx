@@ -3,13 +3,15 @@ import Image from "next/image";
 export default function Footer() {
   return (
     <footer className="max-w-6xl mx-auto pb-4 pl-4 pr-4">
-      <Image
-        src="/images/logo.svg"
-        width={500}
-        height={500}
-        alt="Pagan folk festival logo"
-        className="mx-auto md:-mb-48"
-      />
+      <div className="max-w-64 md:max-w-lg mx-auto md:-mb-48">
+        <Image
+          src="/images/logo.svg"
+          width={500}
+          height={500}
+          alt="Pagan folk festival logo"
+          className=""
+        />
+      </div>
       <div className="flex justify-between items-center flex-nowrap my-4 md:my-14">
         <div className="flex flex-col gap-4">
           <p className="text-nowrap md:text-xl text-center">+45 55 10 85 300</p>
