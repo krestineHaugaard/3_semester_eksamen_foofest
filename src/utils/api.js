@@ -25,15 +25,14 @@ export async function getAvailableSpots() {
 }
 
 // Reserve spot
-export async function reserveSpot(area, amount) {
+export async function reserveSpot(spot, tickets) {
   const headersList = {
     "Content-Type": "application/json",
   };
 
   const bodyContent = JSON.stringify({
-    // has to be changed
-    area: { area },
-    amount: { amount },
+    area: spot,
+    amount: tickets,
   });
 
   const response = await fetch(apiUrl + "reserve-spot", {
@@ -42,7 +41,8 @@ export async function reserveSpot(area, amount) {
     headers: headersList,
   });
 
-  return response.json();
+  const data = await response.json();
+  return data.id;
 }
 
 // Fullfill resevation

@@ -1,4 +1,4 @@
-import { getAvailableSpots } from "@/utils/api";
+import { getAvailableSpots, reserveSpot } from "@/utils/api";
 import { orderRes } from "@/utils/orderdetailsapi";
 import { redirect } from "next/navigation";
 import Image from "next/image";
@@ -7,35 +7,17 @@ import React from "react";
 
 async function submit(formData) {
   "use server";
-  const headersList = {
-    "Content-Type": "application/json",
-  };
 
-  const bodyContent = JSON.stringify({
-    area: formData.get("area_chosen"),
-    amount: formData.get("ticket"),
-  });
-
-  const response = await fetch(
-    process.env.NEXT_PUBLIC_API_URL + "reserve-spot",
-    {
-      method: "PUT",
-      body: bodyContent,
-      headers: headersList,
-    }
+  const data = await reserveSpot(
+    formData.get("area_chosen"),
+    formData.get("ticket")
   );
 
-  const orderReserved = await response.json();
-
-  const id = orderReserved.id;
+  const id = data;
 
   console.log(id);
 
-  orderRes(
-    formData.get("area_chosen"),
-    formData.get("ticket"),
-    orderReserved.id
-  );
+  orderRes(formData.get("area_chosen"), formData.get("ticket"), id);
 
   redirect("/booking_for/" + id);
 }
