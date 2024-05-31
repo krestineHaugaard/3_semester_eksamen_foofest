@@ -1,6 +1,8 @@
 import FakeSpotify from "@/components/FakeSpotify";
 import { getBands } from "@/utils/api";
 
+export const revalidate = 1800;
+
 export default async function SingleBand({ params }) {
   const slug = params.slug;
   const data = await getBands(slug);

@@ -1,6 +1,7 @@
 import { getData } from "@/utils/api";
 import Link from "next/link";
-import Image from "next/image";
+
+export const revalidate = 1800;
 
 export default async function BandList() {
   const bands = await getData("bands");
@@ -16,7 +17,7 @@ export default async function BandList() {
               key={band.slug}
               className="flex flex-col justify-between items-center gap-2 bg-bg-col-bg-dark rounded-lg p-4 md:p-8 shadow-[3px_3px_0_1px] shadow-brand-tree"
             >
-              {/* <Image src={band.logo} width={300} height={300} alt="image" /> */}
+              {/* her vil jeg have insat billeder men grundet tidsnød blev det ikke til noget, jeg kan altid prøve at opdatere til eksamen */}
               <h2 className="text-xl md:text-2xl text-center">{band.name}</h2>
               <h3 className="text-base md:text-lg text-brand-one-100 text-center">
                 {band.genre}

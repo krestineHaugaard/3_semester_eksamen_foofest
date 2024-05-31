@@ -4,6 +4,8 @@ import TicketCard from "@/components/TicketCard";
 import DataImportantNews from "@/components/DataImportantNews";
 import Image from "next/image";
 
+export const revalidate = 1800;
+
 export default function Home() {
   return (
     <>
