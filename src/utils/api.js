@@ -1,5 +1,5 @@
-const apiUrl = "http://localhost:8080/";
-// const apiUrl = "https://respected-berry-scaffold.glitch.me/";
+// const apiUrl = "http://localhost:8080/";
+const apiUrl = "https://respected-berry-scaffold.glitch.me/";
 
 // Get data from api
 export async function getData(param) {
@@ -46,14 +46,14 @@ export async function reserveSpot(spot, tickets) {
 }
 
 // Fullfill resevation
-export async function fullfillResavation() {
+export async function fullfillResavation(props) {
   let headersList = {
     "Content-Type": "application/json",
+    Prefer: "return=representation",
   };
 
   let bodyContent = JSON.stringify({
-    // has to be changed
-    id: "1gh8moicolw6he541",
+    id: props,
   });
 
   let response = await fetch(apiUrl + "fullfill-reservation", {
@@ -62,5 +62,6 @@ export async function fullfillResavation() {
     headers: headersList,
   });
 
-  return response.json();
+  const data = await response.json();
+  return data;
 }

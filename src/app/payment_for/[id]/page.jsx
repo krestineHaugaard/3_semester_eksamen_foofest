@@ -2,11 +2,20 @@ import Link from "next/link";
 import Image from "next/image";
 import OrderOverview from "@/components/OrderOverview";
 import { getOrder } from "@/utils/orderdetailsapi";
+// import { fullfillResavation } from "@/utils/api";
+import { redirect } from "next/navigation";
 
 export default async function Payment({ params }) {
   const id = params.id;
 
   const getOrderInformation = await getOrder(id);
+
+  async function submit(id) {
+    "use server";
+    const confirmed = await fullfillResavation(id);
+    console.log(confirmed);
+    redirect("/order_confirmed");
+  }
 
   return (
     <section>
@@ -17,13 +26,10 @@ export default async function Payment({ params }) {
         Order overview
       </h2>
       <OrderOverview data={getOrderInformation} />
-      <h2 className="text-xl md:text-3xl pt-20 md:pt-28 pb-10 md:pb-16 text-center text-title-col">
+      <h2 className="text-xl md:text-3xl pt-16 md:pt-28 pb-10 md:pb-16 text-center text-title-col">
         Payment details
       </h2>
-      <form
-        action=""
-        className="bg-bg-col-bg-dark rounded-lg shadow-[3px_3px_0_1px] shadow-brand-four max-w-2xl mx-auto p-12 grid grid-cols-2 gap-x-8 mb-20"
-      >
+      <form className="bg-bg-col-bg-dark rounded-lg shadow-[3px_3px_0_1px] shadow-brand-four max-w-2xl mx-auto p-12 grid grid-cols-2 gap-x-8 mb-20">
         <label htmlFor="card_number" className="flex flex-col col-span-2">
           Card number{" "}
           <input
@@ -40,7 +46,10 @@ export default async function Payment({ params }) {
             className="my-2 mb-6 p-1 text-bg-col-bg-dark text-base rounded-lg"
           />
         </label>
-        <label htmlFor="expiration_date" className="flex flex-col">
+        <label
+          htmlFor="expiration_date"
+          className="flex flex-col col-span-2 md:col-span-1"
+        >
           Expiration date{" "}
           <input
             type="date"
@@ -48,7 +57,7 @@ export default async function Payment({ params }) {
             className="my-2 mb-6 p-1 text-bg-col-bg-dark text-base rounded-lg"
           />
         </label>
-        <label htmlFor="cvr" className="flex flex-col">
+        <label htmlFor="cvr" className="flex flex-col col-span-2 md:col-span-1">
           CVR{" "}
           <input
             type="number"
@@ -57,7 +66,7 @@ export default async function Payment({ params }) {
             className="my-2 mb-6 p-1 text-bg-col-bg-dark text-base rounded-lg"
           />
         </label>
-        <div className="flex flex-col gap-4">
+        <div className="flex flex-col gap-4 col-span-2 md:col-span-1">
           <label htmlFor="terms_and_condition">
             <input
               type="checkbox"
@@ -77,7 +86,7 @@ export default async function Payment({ params }) {
           </label>
         </div>
       </form>
-      <div className="flex justify-center gap-4 md:gap-12 pb-24 pt-12">
+      <div className="flex justify-center gap-4 md:gap-12 pb-12 md:pb-24 md:pt-12">
         <Link
           href={`/booking_options_for/${id}`}
           className="bg-brand-one-100 text-base md:text-2xl rounded-lg shadow-[3px_3px_0_1px] shadow-brand-one-150 px-10 md:px-16 py-2 md:py-4 text-title-col active:bg-brand-four active:shadow-brand-five-150 hover:bg-brand-two hover:shadow-brand-tree"
@@ -92,7 +101,8 @@ export default async function Payment({ params }) {
           </div>
         </Link>
         <button
-          type="submit"
+          type="button"
+          onClick={submit}
           className="bg-brand-five-100 text-base md:text-2xl rounded-lg shadow-[3px_3px_0_1px] shadow-brand-five-150 px-10 md:px-16 py-2 md:py-4 text-title-col active:bg-brand-four active:shadow-brand-five-150 hover:bg-brand-two hover:shadow-brand-tree"
         >
           Complete purchase
