@@ -9,12 +9,6 @@ export default function Error() {
         We will read the spell book agin, and in the mean time you can try
         visiting some of the other pages or try to reload this one
       </p>
-      <button
-        type="refresh"
-        className="bg-brand-five-100 text-base md:text-2xl rounded-lg shadow-[3px_3px_0_1px] shadow-brand-five-150 px-10 md:px-16 py-2 md:py-4 text-title-col active:bg-brand-four active:shadow-brand-five-150 hover:bg-brand-two hover:shadow-brand-tree"
-      >
-        Refresh
-      </button>
     </section>
   );
 }
