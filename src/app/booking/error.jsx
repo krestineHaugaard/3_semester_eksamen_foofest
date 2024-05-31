@@ -1,3 +1,5 @@
+"use client";
+
 export default function Error() {
   return (
     <section className="flex flex-col justify-center items-center h-full gap-4">
