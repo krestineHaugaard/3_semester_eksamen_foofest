@@ -42,18 +42,7 @@ export async function getOrder(param) {
   return response.json();
 }
 
-export async function postTicketHolderInfo(
-  ticket,
-  firstname,
-  lastname,
-  email,
-  phone,
-  birthday,
-  address,
-  postal,
-  city,
-  orderid
-) {
+export async function postTicketHolderInfo(props) {
   let headersList = {
     apikey:
       "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inl1aXNvZ2p3dm50Zm94dWRvb2xuIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTA3NTE5NDUsImV4cCI6MjAyNjMyNzk0NX0.A4lJrT15zWBvm6Zm7nXbtq01CUOrjNct49-JgtQboeg",
@@ -61,18 +50,7 @@ export async function postTicketHolderInfo(
     Prefer: "return=representation",
   };
 
-  let bodyContent = JSON.stringify({
-    chose_ticket: ticket,
-    first_name: firstname,
-    last_name: lastname,
-    email: email,
-    phone_number: phone,
-    birthday: birthday,
-    address_line: address,
-    postal_code: postal,
-    city: city,
-    order_id: orderid,
-  });
+  let bodyContent = JSON.stringify(props);
 
   let response = await fetch(
     "https://yuisogjwvntfoxudooln.supabase.co/rest/v1/ticket_holders",

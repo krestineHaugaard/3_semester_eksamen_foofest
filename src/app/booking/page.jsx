@@ -15,8 +15,6 @@ async function submit(formData) {
 
   const id = data;
 
-  console.log(id);
-
   orderRes(formData.get("area_chosen"), formData.get("ticket"), id);
 
   redirect("/booking_for/" + id);

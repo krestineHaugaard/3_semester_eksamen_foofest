@@ -1,7 +1,7 @@
 import { getOrder } from "@/utils/orderdetailsapi";
-import TicketInformationForm from "@/components/TicketInformationForm";
+import CampingOptions from "@/components/CampingOptions";
 
-export default async function BookingInformation({ params }) {
+export default async function BookingOptions({ params }) {
   const orderid = params.id;
   const data = await getOrder(orderid);
 
@@ -15,7 +15,7 @@ export default async function BookingInformation({ params }) {
 
   return (
     <>
-      <TicketInformationForm ticketAmount={cleanNumber} orderID={orderid} />
+      <CampingOptions orderID={orderid} ticketamount={cleanNumber} />
     </>
   );
 }
